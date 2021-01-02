@@ -46,8 +46,14 @@ $(document).ready(function() {
 	// se crea la función que procesa la respuesta del servidor
 	function procesarDatos(datos_devueltos) {
 		console.log(datos_devueltos);
-		// se imprime el valor de los datos obtenidos
+		// para imprimir un único dato:
 		$("#contenidos_externos").html(datos_devueltos.Apellido);  
+		// para imprimir toda la data:
+		$("#contenidos_externos").html(
+			"<p> Nombre: " + datos_devueltos.Nombre + "</p><br/>"
+			+ "<p> Apellido: " + datos_devueltos.Apellido + "</p><br/>"
+			+ "<p> Edad: " + datos_devueltos.Edad + "</p>"
+		);  
 	}
 	// función que procesa si ocurre algún error
 	function procesarError() {
